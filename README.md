@@ -51,14 +51,14 @@ docker run --rm \
   -e TELEGRAM_BOT_TOKEN=your_token \
   -e TELEGRAM_CHAT_ID=123456789 \
   -v $(pwd)/ovpn:/app/ovpn:ro \
-  vpnchecker
+  open-vpn-test-connect
 ```
 
 ## Building Locally
 
 ```bash
-go build -o vpnchecker
-./vpnchecker
+go build -o open-vpn-test-connect
+./open-vpn-test-connect
 ```
 
 ## Output Format

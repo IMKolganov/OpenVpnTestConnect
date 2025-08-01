@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go build -o vpnchecker
+RUN go build -o open-vpn-test-connect
 
 # Use a minimal image for running the application
 FROM debian:bookworm-slim
@@ -28,7 +28,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy built binary and config files
-COPY --from=builder /app/vpnchecker /app/vpnchecker
+COPY --from=builder /app/open-vpn-test-connect /app/open-vpn-test-connect
 COPY ./ovpn /app/ovpn
 
 # Set environment variables (you can override these at runtime)
@@ -36,4 +36,4 @@ ENV VPN_CONFIG_DIR=/app/ovpn
 ENV CHECK_INTERVAL=30m
 
 # Run the binary
-CMD ["/app/vpnchecker"]
+CMD ["/app/open-vpn-test-connect"]
