@@ -1,0 +1,15 @@
+services:
+  vpn_app:
+    build:
+      context: .
+    container_name: open-vpn-test-connect
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: "${TELEGRAM_CHAT_ID}"
+    volumes:
+      - ./ovpn:/app/ovpn:ro

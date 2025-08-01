@@ -1,0 +1,41 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of `go build`
+/bin/
+/build/
+
+# Dependency directories
+/vendor/
+
+# Go modules
+go.sum
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Personal / Certificates and Keys
+*.key
+*.crt
+*.csr
+*.ovpn
+*.pem
+*.der
+*.pfx
+*.p12
+*.cer
+*.jks
+*.keystore
+*.srl
+*.cnf
+*.req
+*.crl
