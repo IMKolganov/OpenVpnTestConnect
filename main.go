@@ -11,6 +11,7 @@ import (
 	"open-vpn-test-connect/app"
 	"open-vpn-test-connect/env"
 	"open-vpn-test-connect/notify"
+	"open-vpn-test-connect/version"
 	"open-vpn-test-connect/vpn"
 )
 
@@ -23,6 +24,10 @@ const (
 )
 
 func main() {
+	// Print version info at startup
+	fmt.Printf("OpenVPN Test Connect Monitor\nVersion: %s\nCommit: %s\nBuilt: %s\n\n",
+		version.Version, version.Commit, version.BuildDate)
+
 	// Read env
 	ovpnDir := env.Get("VPN_CONFIG_DIR", defaultConfigDir)
 	checkInterval := env.GetDuration("CHECK_INTERVAL", defaultInterval)
