@@ -1,4 +1,4 @@
-module main.go
+module open-vpn-test-connect
 
 go 1.24.5
 
